@@ -3,6 +3,7 @@ from torch import nn
 from torch import optim
 import torch.nn.functional as F
 import torchvision
+import os
 
 train_batch_size = 64
 test_batch_size = 1000
@@ -54,6 +55,7 @@ def train(epoch):
     train_dataloader = get_dataloader(train=mode)
     print(len(train_dataloader.dataset))
     print(len(train_dataloader))
+
     for idx, (data, target) in enumerate(train_dataloader):
         optimizer.zero_grad()
         output = mnist_net(data)
@@ -67,8 +69,6 @@ def train(epoch):
 
             train_loss_list.append(loss.item())
             train_count_list.append(idx * train_batch_size + (epoch - 1) * len(train_dataloader))
-            torch.save(mnist_net.state_dict(), "model/mnist_net.pkl")
-            torch.save(optimizer.state_dict(), 'results/mnist_optimizer.pkl')
 
 
 def test():
