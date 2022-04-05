@@ -7,7 +7,7 @@ from torch.utils.data import Dataset
 
 from vocab import Vocab
 
-data_path = r"./data/data_0315_new.csv"
+data_path = r"data/predict_data.csv"
 
 Vocab()
 
@@ -72,7 +72,7 @@ def get_data_list():
 
 
 if __name__ == "__main__":
-    # data_path = r"./data/data_0315_new.csv"
+    # data_path = r"./data/predict_data.csv"
     # data_list = []
     # with open(data_path, "r", encoding="gbk") as file:
     #     data_list = list(csv.reader(file))
