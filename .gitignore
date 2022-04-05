@@ -134,3 +134,5 @@ dmypy.json
 download/
 
 *.zip
+
+.idea

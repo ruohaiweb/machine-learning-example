@@ -1,6 +1,11 @@
-"""
-文本序列化
-"""
+# -*-coding:utf-8-*-
+import os.path
+import pickle
+
+from torch.utils.data import DataLoader
+from tqdm import tqdm
+
+
 
 
 class Vocab:
@@ -71,8 +76,7 @@ class Vocab:
     def __len__(self):
         return len(self.dict)
 
-# 以下是调试代码
-if __name__ == '__main__':
+"""
     sentences = [["今天", "天气", "很", "好"],
                  ["今天", "去", "吃", "什么"]]
     ws = Vocab()
@@ -89,3 +93,4 @@ if __name__ == '__main__':
     ret = ws.inverse_transform(ret)
     print(ret)
     pass
+"""
